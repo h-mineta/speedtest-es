@@ -1,0 +1,162 @@
+{
+  "index_patterns" : ["speedtest-*"],
+  "settings" : {
+    "index": {
+      "lifecycle": {
+        "name" : "speedtest-ilm-policy"
+      }
+    },
+    "number_of_replicas" : "0"
+  },
+  "mappings" : {
+    "properties" : {
+      "bytes_received" : {
+        "index": false,
+        "type" : "long"
+      },
+      "bytes_sent" : {
+        "index": false,
+        "type" : "long"
+      },
+      "client" : {
+        "properties" : {
+          "country" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "ip" : {
+            "type" : "ip"
+          },
+          "isp" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "ispdlavg" : {
+            "type" : "float"
+          },
+          "isprating" : {
+            "type" : "float"
+          },
+          "ispulavg" : {
+            "type" : "float"
+          },
+          "lat" : {
+            "type" : "float"
+          },
+          "loggedin" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "lon" : {
+            "type" : "float"
+          },
+          "rating" : {
+            "type" : "float"
+          }
+        }
+      },
+      "download" : {
+        "type" : "float"
+      },
+      "ping" : {
+        "type" : "float"
+      },
+      "server" : {
+        "properties" : {
+          "cc" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "country" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "d" : {
+            "type" : "float"
+          },
+          "host" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "id" : {
+            "type" : "long"
+          },
+          "lat" : {
+            "type" : "float"
+          },
+          "latency" : {
+            "type" : "float"
+          },
+          "lon" : {
+            "type" : "float"
+          },
+          "name" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "sponsor" : {
+            "index": false,
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "url" : {
+            "index": false,
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          }
+        }
+      },
+      "timestamp" : {
+        "type" : "date"
+      },
+      "upload" : {
+        "type" : "float"
+      }
+    }
+  }
+}
