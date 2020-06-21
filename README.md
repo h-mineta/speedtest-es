@@ -4,7 +4,7 @@ speedtest-cliの結果をElasticsearchに保存するスクリプト
 ## 前提条件
 既にlocalhost:9200でElasticsearch(ver7.6以上)が動いているものとする  
 必要に応じて新規にElasticsearch(ついでにKibana)をセットアップしておく  
-https://github.com/h-mineta/docker-ek
+https://github.com/h-mineta/docker-elk-stack
 
 ## インストール
 ```
